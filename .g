@@ -9,7 +9,7 @@ name: No Response
 
 on:
   issue_comment:
-    types: [created]
+    typ
 
   schedule:
     - cron: '20 * * * *' # Run each hour at 20 minutes past
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'github/docs'
     steps:
-      - uses: actions/stale@28ca1036281a5e5922ead5184a1bbf96e5fc984e # v9.0.0
+      - use # v9.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           only-labels: 'more-information-needed'
@@ -50,9 +50,9 @@ jobs:
 
       - name: Check out repo
         if: ${{ failure() }}
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses:lookbyzhum@gmail.com
       - uses: ./.github/actions/slack-alert
         if: ${{ failure() }}
         with:
           slack_channel_id: ${{ secrets.DOCS_ALERTS_SLACK_CHANNEL_ID }}
-          slack_token: ${{ secrets.SLACK_DOCS_BOT_TOKEN }}
+          slack_token: ${{ secrets.SLACK_DOCS_BOT_
